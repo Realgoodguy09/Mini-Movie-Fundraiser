@@ -1,6 +1,18 @@
 # Functions go here
 
+# Checks the user enters an integer to a given question
+def num_checker(question):
 
+    while True:
+        
+        try:
+            response = int(input(question))
+            return response
+
+
+
+        except ValueError:
+            print("Please enter an integer.")
 # Main routine goes here
 tickets_sold = 0
 
@@ -20,7 +32,7 @@ while True:
         continue
     else:
         print("?? That looks like a typo, please try again.")
-
+        continue
     tickets_sold += 1
 
 

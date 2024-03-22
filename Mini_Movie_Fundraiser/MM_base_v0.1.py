@@ -28,6 +28,41 @@ def not_blank(question):
             return response
 
 
+# Checks the user enters an integer to a given question
+def num_checker(question):
+
+    while True:
+        
+        try:
+            response = int(input(question))
+            return response
+
+
+
+        except ValueError:
+            print("Please enter an integer.")
+
+
+
+# Calculate the ticket price based 
+def calc_ticket_price(var_age):
+
+    # ticket is $7.50 for users under 16
+    if var_age < 16:
+        price = 7.5
+
+
+    # ticket is $10.50 for users between age 16 and 64
+    elif var_age < 65:
+        price = 10.5
+
+
+    # ticket is $6.50 for seniors (65+)
+    else:
+        price = 6.5
+    
+    return price
+
 # main routine goes here
 
 # set maximum number of tickest below
@@ -52,6 +87,21 @@ while tickets_sold < MAX_TICKETS:
     if name == 'xxx':
         break
 
+    age = int(input("Age: "))
+
+    if 12<= age <= 120:
+        pass
+    elif age < 12:
+        print("Sorry, you are too young for this movie")
+        continue
+    else:
+        print("?? That looks like a typo, please try again.")
+        continue
+
+    # caculate ticket cost
+    ticket_cost = calc_ticket_price(age)
+    print("Age: {}, Ticket: ${:.2f}".format(age, ticket_cost))
+    
 
     tickets_sold += 1
 
