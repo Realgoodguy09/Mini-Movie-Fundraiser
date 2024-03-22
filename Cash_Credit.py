@@ -5,26 +5,28 @@ print()
 print()
 
 # functions go here
-def yes_no(question):
+def cash_credit(question):
+
+
     while True:
         response = input(question).lower()
 
-        if response == 'yes' or response == 'y':
-            return 'yes'
+        if response == 'cash' or response == 'ca':
+            return 'cash'
 
-        elif response == 'no' or response == 'n':
-            return 'no'
+        elif response == 'credit' or response == 'cr':
+            return 'credit'
 
         else:
-            print('Please enter yes / no')
+            print('Please enter a valid payment method')
 
 # main routine goes here
 
 
-want_instructions = yes_no('Do you want to read the instructions? ').lower()
+payment_method = cash_credit('Choose a payment method (cash or credit): ')
 
 
-if want_instructions == "yes":
+if payment_method == "yes":
     print("Instructions go here")
 
 print('We are done')
